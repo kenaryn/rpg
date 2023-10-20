@@ -39,14 +39,15 @@ main {
 
 .skill {
   background: none;
-  border: 3px solid rgb(179, 241, 86);
+  border: 3px solid rgb(190, 143, 13);
   font-family: inherit;
   font-size: 1.75rem;
   padding: 1rem;
-  width: 13rem;
+  width: 10rem;
   text-align: center;
   display: block;
   margin-bottom: 1.5rem;
+  border-radius: 9.5%;
 }
 
 .btn {
@@ -93,4 +94,9 @@ main {
 .skill-points-remaining {
   color: darkred;
   font-weight: bold;
+}
+
+.right p {
+  text-align: justify;
+  text-justify: interword;
 }
