@@ -4,11 +4,12 @@
 const btnTrain = document.getElementById('train');
 const skillsElm = document.querySelectorAll('.skill');
 const skills = ['strength', 'dexterity', 'stamina', 'luck'];
+const skillInfoElm = document.getElementById('skill-points-info');
 
 // State variables.
 let skillPointsRemaining = 20;
 let allSkillPointsSpent = false;
-let debug = true;
+let debug = false;
 
 const addSkillPoints = function (/** @type {string} */ skill) {
   /**
@@ -28,7 +29,10 @@ btnTrain.addEventListener('click', function () {
     if (!allSkillPointsSpent) {
       const skillPoints = addSkillPoints(`${skills[index]}`);
       if (debug) console.info(`skillPoints: ${skillPoints}`);
-      if (skillPointsRemaining > 0) {
+
+      // Check either enough skill points remains to assign a new skill value.
+      if (skillPointsRemaining - skillPoints > 0) {
+        // Check either a new skill value fits in the correct range.
         if (skillPoints >= 1 && skillPoints <= 5) {
           document.querySelector(`.skill-score-${index}`).textContent = skillPoints;
           skillPointsRemaining -= skillPoints;
@@ -36,9 +40,11 @@ btnTrain.addEventListener('click', function () {
           if (debug) console.log(`skillPointsRemaining: ${skillPointsRemaining}`);
         } else {
           // FIXME add a <p> to warn user to enter a score between 1 and 5 for each wrong skill value.
-          const skillPointsInvalid = document.createElement('p');
-          skillPointsInvalid.textContent = 'Enter a score between 1 and 5.';
-          console.log(skillPointsInvalid);
+          const newP = document.createElement('p');
+          const invalidSkillLevel = document.createTextNode('The skill score can not exceed 5!.');
+          newP.appendChild(invalidSkillLevel);
+          document.body.insertBefore(newP, skillInfoElm);
+          console.info(invalidSkillLevel);
         }
       } else if (skillPointsRemaining <= 0) {
         document.querySelector('.skill-points-info').textContent = 'ℹ️ No skill points available.';
