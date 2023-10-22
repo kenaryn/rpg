@@ -92,11 +92,16 @@ main {
 }
 
 .skill-points-remaining {
-  color: darkred;
+  color: darkolivegreen;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .right p {
   text-align: justify;
   text-justify: interword;
+}
+
+.skill-points-info {
+  line-height: 2rem;
 }
