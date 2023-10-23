@@ -20,17 +20,30 @@ const addSkillPoints = function (/** @type {string} */ skill) {
 /* TODO: prevent skill points remaining to fall under 0 
 by checking all `skillElm.value` when clicking `train` button.
 */
-skillsElm.forEach((skillElm, index) => {
+
+skillsElm.forEach((skillElm, idx) => {
+  skillElm.addEventListener('input', function (e) {
+    let skillPoints = parseInt(e.target.value);
+
+    if (!isNaN(skillPoints)) e.target.value = '';
+
+    if (skillPoints < 0 && skillPoints > 5) {
+      skill;
+    }
+  });
+});
+
+skillsElm.forEach((skillElm, idx) => {
   btnTrain.addEventListener('click', function () {
     if (!allSkillPointsSpent) {
-      const skillPoints = addSkillPoints(`${skills[index]}`);
+      const skillPoints = addSkillPoints(`${skills[idx]}`);
 
       // Check either enough skill points remains to assign a new skill value.
       // Check either a new skill value fits in the correct range.
       if (skillPointsRemaining) {
         if (skillPoints >= 1 && skillPoints <= 5 && skillPointsRemaining - skillPoints >= 0) {
           skillPointsRemaining -= skillPoints;
-          document.querySelector(`.skill-level-${index}`).textContent = skillPoints;
+          document.querySelector(`.skill-level-${idx}`).textContent = skillPoints;
           document.querySelector('.skill-points-remaining').textContent = skillPointsRemaining;
 
           // Warn the user and deactivate train button when no SP left.
