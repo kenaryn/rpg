@@ -12,34 +12,35 @@
   <header>
     <h1>Character creation</h1>
   </header>
+
   <main>
     <section class="left">
       <h2>Character sheet</h2>
       
       <label for="strength">Strength: </label>
       <p><span class="skill-level-0">0</span></p>
-      <input id="strength" name="strength" type="number" class="skill" min="0" max="5" />
+      <input id="strength" name="strength" type="number" class="skill" />
       <label for="dexterity">Dexterity: </label>
       <p><span class="skill-level-1">0</span></p>
-      <input id="dexterity" name="dexterity" type="number" class="skill" min="0" max="5" />
+      <input id="dexterity" name="dexterity" type="number" class="skill" />
       <label for="stamina">Stamina: </label>
       <p><span class="skill-level-2">0</span></p>
-      <input id="stamina" name="stamina" type="number" class="skill" min="0" max="5" />
+      <input id="stamina" name="stamina" type="number" class="skill" />
       <label for="luck">Luck: </label>
       <p><span class="skill-level-3">0</span></p>
-      <input id="luck" name="luck" type="number" class="skill" min="0" max="5" />
+      <input id="luck" name="luck" type="number" class="skill" />
       <label for="wisdom">Wisdom: </label>
       <p><span class="skill-level-4">0</span></p>
-      <input id="wisdom" name="wisdom" type="number" class="skill" min="0" max="5" />
+      <input id="wisdom" name="wisdom" type="number" class="skill" />
       
       <button id="train" class="btn">Train</button>
     </section>
     
     <section class="right">
-      <p>Put 1 to 5 points into each skill to distribute a total amount of 20 points.</p>
-      <p class="skill-points-info">Skill points remaining: <span class="skill-points-remaining">20</span></p>
+      <p>Put 0 to 5 point(s) into each skill to dispatch a total amount of 20 points.</p>
+      <p class="skill-points-info">Skill points remaining: <span class="skill-points-left">20</span></p>
     </section>
   </main>
-  <script src="./char_crea02.js" type="module"></script>
+  <script src="./char_crea04.js" type="module"></script>
 </body>
 </html>

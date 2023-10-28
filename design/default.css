@@ -20,15 +20,16 @@ p {
 }
 
 body {
-  background: linear-gradient(to top left, #daa520, #6e581f);
+  height: 100vh;
+  background: linear-gradient(to top left, darkcyan, rgb(145, 230, 230));
   font-family: 'Press Start 2P', sans-serif;
-  color: antiquewhite;
+  color: rgb(2, 67, 97);
 }
 
 header {
   position:relative;
   height: 15vh;
-  border-bottom: 6px solid rgb(179, 241, 86);
+  border-bottom: 6px solid rgb(30, 91, 170);
 }
 
 main {
@@ -39,7 +40,7 @@ main {
 
 .skill {
   background: none;
-  border: 3px solid rgb(190, 143, 13);
+  border: 3px solid rgb(57, 115, 163);
   font-family: inherit;
   font-size: 1.75rem;
   padding: 1rem;
@@ -48,6 +49,13 @@ main {
   display: block;
   margin-bottom: 1.5rem;
   border-radius: 9.5%;
+  transition: 0.5s;
+}
+
+.skill:focus {
+  outline: none;
+  border: 3px solid darkblue;
+  box-shadow: 0 1rem 2rem rgba(68, 16, 189, 0.4);
 }
 
 .btn {
@@ -91,16 +99,16 @@ main {
   font-size: 1.25rem;
 }
 
-.skill-points-remaining {
-  color: darkolivegreen;
+.skill-points-left {
+  color: rgb(23, 134, 38);
   font-weight: bold;
   font-size: 1.5rem;
 }
 
-.right p {
+/* .right p {
   text-align: justify;
   text-justify: interword;
-}
+} */
 
 .skill-points-info {
   line-height: 2rem;
